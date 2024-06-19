@@ -18,7 +18,7 @@ export const AccountData = [
         socialAccount: "Google",
         salary: "$160.00",
         location: "Accra, Ghana",
-        backgroundColor:"#fc9803"
+        backgroundColor:"blue"
     
       },
       {

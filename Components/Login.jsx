@@ -3,6 +3,7 @@ import React from 'react'
 import { AntDesign } from '@expo/vector-icons'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { AccountData } from '../mock/Accounts'
+import { JobsData } from '../mock/Jobs'
 
 const Login = () => {
   return (
@@ -79,6 +80,43 @@ const Login = () => {
         showsHorizontalScrollIndicator = {false}
       />
     </View>
+
+    <View style={{flexDirection:"row"}}>
+      <Text style={{fontWeight:"701", fontSize:25 }}>Popular Jobs</Text>
+         <TouchableOpacity>
+           <Text style={{color:"#95969D", fontSize:20, marginLeft:150}}>See all</Text>
+          </TouchableOpacity>
+    </View>
+     
+    <View>
+            
+      <FlatList
+        data={JobsData}
+        renderItem={({item}) => (
+        <View style={styles.jobsContainer}>
+            <View>
+               <Image style={{height:70, width:70}} source={item.image}/>
+             </View>
+                      
+             <View style={{marginLeft:10, justifyContent:"space-between"}}>
+               <Text style={{fontSize:20, fontWeight:"700"}}>{item.title}</Text>
+               <Text style={{fontSize:21, color:"#95969D"}}>{item.subTitle}</Text>
+             </View>
+                <View style={{ justifyContent:"space-between"}}>
+                  <Text style={{fontWeight:"600"}}>{item.amount}</Text>
+                      <Text style={{color:"#95969D"}}>{item.city}</Text>
+                 </View>
+                      
+             </View>
+              )}
+               keyExtractor={(item) => item.id.toString()}
+               showsVerticalScrollIndicator = {false}
+               vertical
+              />
+            </View>
+
+
+
      </SafeAreaView>
   )
 }
@@ -132,13 +170,20 @@ marginRight:20
   height:39,
   width:40,
  },
- socialDataContainer:{
+ AccountDataContainer:{
   height:215, 
   width:250,
   margin:20,
   borderRadius:20,
   padding:20
  },
-
+ jobsContainer:{
+  backgroundColor:"#fff",
+  margin:10,
+  height:76,
+  borderRadius:10,
+  flexDirection:"row",
+  justifyContent:"space-between"
+  }
 
 });

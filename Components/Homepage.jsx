@@ -16,7 +16,7 @@ const Homepage = ({navigation}) => {
 
       </View>
         <View style={{marginLeft:20}}>
-        <Text style={{ fontSize:40}}> Welcome Back </Text>
+        <Text style={{ fontSize:40, flexDirection:'row'}}> Welcome Back </Text>
         <Text style={{color:'#BDBEC2'}}> Let's log in. Apply to jobs! </Text>
       </View>
       <View style={{marginTop:40, justifyContent:'center', marginLeft:15}}>
